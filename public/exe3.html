@@ -8,6 +8,7 @@
 	margin-bottom:20px;
 	padding:10px;
 }
+	<!-- Bootstrap Table Style-->
 </style>
 <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -17,22 +18,20 @@
 </head>
 <body>
 	
-	
+<!-- create a select button to upload a .csv file-->	
 <div id="drop">
 	DROP!<button onclick="document.querySelector('input').click()">Or Select</button>
 	<input style="visibility: collapse; width: 0px;" type="file" onchange="upload(this.files[0])">
 </div>
 
-<div id="output"></div>
-
 <script type="text/javascript">
 
 var output = document.getElementById("output");
 
-//var csv is the CSV file with headers
-function csvJSON(csv){
- 
-  var lines=csv.split("\n");
+//csv file read and split to stored HTML Table
+function csvJSON(csv)
+{
+  var lines = csv.split("\n");
   var result = [];
   var headers=lines[0].split(",");//split the the csv file content
   html='<table class="table"><tbody>';
